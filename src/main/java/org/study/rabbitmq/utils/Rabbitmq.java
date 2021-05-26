@@ -12,9 +12,20 @@ import java.util.concurrent.TimeoutException;
 public class Rabbitmq {
 
     public static final String QUEUE_NAME = "simple-queue-1";
+
+    /**
+     * direct mode
+     */
     public static final String ROUTING_QUEUE_NAME = "routing.order";
-    public static final String ROUTING_KEY="#.order";
+    public static final String ROUTING_KEY = "#.order";
     public static final String DIRECT_EXCHANGE_NAME = "routing-exchange";
+
+    /**
+     * topic mode
+     */
+    public static final String TOPIC_KEY = "*.user";
+    public static final String TOPIC_QUEUE_NAME = "topic.user";
+    public static final String TOPIC_EXCHANGE_NAME = "topic-exchange";
 
     public static Connection getConnection() throws TimeoutException, IOException {
         ConnectionFactory connectionFactory = new ConnectionFactory();
@@ -26,7 +37,6 @@ public class Rabbitmq {
         Connection connection = connectionFactory.newConnection();
         return connection;
     }
-
 
 
 }

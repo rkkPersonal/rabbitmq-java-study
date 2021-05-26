@@ -27,6 +27,12 @@ public class Rabbitmq {
     public static final String TOPIC_QUEUE_NAME = "topic.user";
     public static final String TOPIC_EXCHANGE_NAME = "topic-exchange";
 
+    /**
+     * fanout mode
+     */
+    public static final String FANOUT_QUEUE_NAME = "wechat-group-fanout";
+    public static final String FANOUT_EXCHANGE_NAME = "fanout-exchange";
+
     public static Connection getConnection() throws TimeoutException, IOException {
         ConnectionFactory connectionFactory = new ConnectionFactory();
         connectionFactory.setHost("192.168.43.200");
